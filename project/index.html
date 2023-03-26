@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylew.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+   
+</head>
+<body>
+
+
+    <div class="header">
+        <h2>Global Academy</h2>
+        <!-- <p><a href="#"><img class="logo" src="logo.png" ></a></p> -->
+            <p>Dedicated to Excellence leadership and service</p>
+   </div>
+   <nav>
+    <div class="topnav flex">
+      <a href="#" class="logo">
+        <img src="logo.png" alt="logo">
+      </a>
+      <div class="nav-link">
+        <ul class="flex">
+            <li><a href="index.html" class="hover-link">Home</a></li>
+            <li><a href="about.html" class="hover-link">About Us</a></li>
+            <li><a href="#" class="hover-link">Curriculum</a></li>
+            <li><a href="insert.html" class="hover-link">Admission</a></li>
+            <li><a href="gallery.html" class="hover-link">Gallery</a></li>
+            <li><a href="display.php" class="hover-link">contact</a></li>
+            <li><a href="#" class="hover-link secondary-button">Sign in</a></li>
+            <li><a href="#" class="hover-link primary-button">Sign up</a></li>
+          </ul>
+    </div>
+    </div>
+  </nav>
+      <div style="position: relative;">
+        <img src="img1.png" alt="Image 1" id="myImage" style="display: block; margin: auto; width: 100%; height: 670px;">
+        <button id="prevImageButton" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%);">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="#000000" d="M16.59,7.41L12.17,12L16.59,16.59L15.17,18L10.17,13L10.17,13L9.41,12.24L10.17,11.47L10.17,11.47L15.17,6.47L16.59,7.41Z"></path>
+          </svg>
+        </button>
+        <button id="nextImageButton" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="#000000" d="M7.41,16.59L11.83,12L7.41,7.41L8.83,6L13.83,11L13.83,11L14.59,11.76L13.83,12.53L13.83,12.53L8.83,17.53L7.41,16.59Z"></path>
+          </svg>
+        </button>
+        <div id="imageCount" style="position: absolute; bottom: 0; left: 0; right: 0; text-align: center;"></div>
+      </div>
+      
+      <script>
+        const image = document.getElementById("myImage");
+        const images = ["img1.png", "img2.png", "img3.png"];
+        let currentImageIndex = 0;
+        const prevImageButton = document.getElementById("prevImageButton");
+        const nextImageButton = document.getElementById("nextImageButton");
+        const imageCount = document.getElementById("imageCount");
+      
+        function showNextImage() {
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          image.src = images[currentImageIndex];
+          updateImageCount();
+        }
+      
+        function showPrevImage() {
+          currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+          image.src = images[currentImageIndex];
+          updateImageCount();
+        }
+      
+        function updateImageCount() {
+          imageCount.textContent = `${currentImageIndex + 1} / ${images.length}`;
+        }
+      
+        nextImageButton.addEventListener("click", showNextImage);
+        prevImageButton.addEventListener("click", showPrevImage);
+        updateImageCount();
+      </script>
+           <style>
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+        
+            body {
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              line-height: 1.5;
+            }
+        
+            /* Header styles */
+            header {
+              background-color: #f7f7f7;
+              padding: 50px;
+            }
+        
+            .hard-section {
+              max-width: 1200px;
+              margin: 0 auto;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+        
+            .hard-left {
+              max-width: 50%;
+            }
+        
+            .hard-left h1 {
+              font-size: 3rem;
+              margin-bottom: 20px;
+            }
+        
+            .hard-left p {
+              font-size: 1.2rem;
+              line-height: 1.5;
+              margin-bottom: 40px;
+            }
+        
+            .primary-button {
+              display: inline-block;
+              padding: 12px 24px;
+              font-size: 1.2rem;
+              background-color: #29a3a3;
+              color: #fff;
+              border-radius: 5px;
+              text-decoration: none;
+            }
+        
+            .get-started-btn {
+              margin-top: 20px;
+            }
+        
+            .hard-right {
+              max-width: 40%;
+              text-align: right;
+            }
+        
+            .hard-right img {
+              max-width: 100%;
+              height: auto;
+            }
+          </style>
+        </head>
+        <body>
+          <header>
+            <div class="hard-section">
+              <div class="hard-left">
+                <h1>Welcome to Global Academy</h1>
+                <p>Global is a coeducational day and boarding school for grades P to XII. We welcome and enroll students of all faiths, races, and backgrounds, and offer various need-based scholarships each year. We have small class size which enables staff to build strong relationship with the children, know their families well and work teachers and parents together as a team for the benefit of the children in our care. Each child is fully supported at each stage of learning.</p>
+                <a href="insert.html" class="primary-button get-started-btn">Get started</a>
+              </div>
+              <div class="hard-right">
+                <img src="img3.png" alt="image">
+              </div>
+            </div>
+          </header>
+          <section id="featuresw">
+            <h1>features of Global</h1>
+            
+          </section>
+          <section id="features">
+            <!-- <h1>features of Global</h1>
+            <p>Global Got Exciting features likes</p> -->
+            <!-- <div class="fea-base"> -->
+              <div class="fea-box">
+                <a >
+                  <img src="img10.jpg">
+                  
+                </a><h3>Faculty</h3>
+                <p>Discover the unrivaled education experience at our school, where the best faculty members are dedicated to your success.</p>
+              <!-- </div> -->
+            </div>
+            <div class="fea-box">
+              <a >
+                <img src="img11.png">
+                
+              </a>
+              <h3>ECA</h3>
+              <p>Realize your hidden talents and explore new passions with our extensive extracurricular activities program - a hallmark of our school experience.</p>
+            <!-- </div> -->
+          </div>
+          <div class="fea-box">
+            <a >
+              <img src="img12.png">
+              
+            </a><h3>Scholarship</h3>
+            <p>Unlocking doors to education - Our school not only provides financial aid for acedemic fees but also hostel expenses, making education accessible to all.</p>
+
+
+
+            </p>
+          <!-- </div> -->
+        </div>
+            
+          </section>
+         <style>
+          .container {
+            background-image: url("path/to/your/image.jpg");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+          }
+          
+          h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+          }
+          
+          p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+          }
+        </style>
+                  </style>
+                  <style>
+       .image-container {
+         position: relative;
+         width: 600px;
+         height: 400px;
+         margin: 20px auto;
+         border: 1px solid #ccc;
+         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+         border-radius: 20px;
+       }
+     
+       .image-container img {
+         display: block;
+         width: 600px;
+         height: 400px;
+        border-radius: 20px;
+       
+       }
+       .image-container img:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+     
+       .text-container {
+ position: absolute;
+ top: 4%;
+ left: 100%;
+ width: 68.8%;
+ background-color: white;
+ padding: 20px;
+ margin-left: -20%;
+ border-radius: 20px;
+ box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+ font-size: 15px;
+ font-weight: bold;
+ text-align: center;
+}
+
+     </style>
+    
+     <div class="image-container">
+       <img src="img13.jpg" alt="Random image">
+       <div class="text-container">
+           <h2>Message from principal</h2>
+         <h5>The concept of वसुधैव कुटुम्बकम in Maha Upanishad beautifully captures the essence of our existence as being part of one family. The theme of the academic year 2022-23 reminds us that we are not only one family but we live in one Common Home. When the Common Home is inflicted with pain and disorder, the whole family faces the brunt. Recently, Kathmandu made to the top in the list not for a good reason but as the highest polluted city in the world. Nepal known as the ‘Water Tower of Asia’ continue to face multiple environmental challenges. Quick melting of ice in the Himalayas and increasing pollution that emits toxins in the main cities are to name some of them. In short, as a county we have our share in harming the mother earth.</h5>
+       
+       <h3>Bishworaj Wagle<br>Principal</h3></div>
+     </div>
+        <div class="column" id="welcome">
+            <img src="img13.png">
+          </div>
+          <header>
+          <div class=" hard-section flex">
+            <div class="hard-left">
+              <h1>
+                Our's Global
+              </h1>
+              <p> Our Schools
+                Global offers an NEB curriculum with an international perspective. The program is college preparatory with a wide selection of electives and extracurricular activities leading to an Nepal's high school program.
+                <br><br>
+                We Got<br>
+                >Elementary School<br>
+                >Middle School<br>
+                >High School
+              </div>
+              <div class="hard-right">
+                <img src="img2.png" alt="image">
+              </div>
+          </div>
+        </header>
+              <!-- section -->
+              <div class="news-event">
+                Latest News & Events
+              </div>
+              <section class="latest-news">
+                <div class="news-item">
+                  <img src="img6.jpg" alt="Image 1">
+                  <div class="news-desc">
+                    <h3>Inviting you all</h3>
+                    <p>Gloabl wants to invite all our's alumuni,students and parents on the grand opening of the new building of our school.</p>
+                  </div>
+                </div>
+                
+                <div class="news-item">
+                  <img src="img8.jpg" alt="Image 2">
+                  <div class="news-desc">
+                    <h3>Grade 12 Tour</h3>
+                    <p>Grade 12 students at yipee land during educational tour from school to the eastern part of Nepal.                                      </p>
+                  </div>
+                </div>
+                
+                <div class="news-item">
+                  <img src="img9.jpg" alt="Image 3">
+                  <div class="news-desc">
+                    <h3>Best of luck Grade 10</h3>
+                    <p>Here is the schedule of Grade 10 Board Exam</p>
+                  </div>
+                </div>
+              </section>
+          <style>
+            #welcome {
+              width: 80%;
+              margin: 0 auto;
+              text-align: center;
+            }
+          
+            #welcome h1 {
+              font-size: 2.5rem;
+            }
+          
+            #welcome p {
+              font-size: 1.2rem;
+              line-height: 1.5;
+              margin: 1rem 0;
+            }
+          </style>
+          
+          <script>
+            // This is a JavaScript function that will be called when the page is loaded
+            function init() {
+              console.log("Page loaded!");
+            }
+          
+            // This is an event listener that will call the "init" function when the page is loaded
+            document.addEventListener("DOMContentLoaded", init);
+          </script>
+    
+          <footer>
+            <div class="footer-col">
+                <h3>Global</h3>
+                <li>About Us</li>
+                <li>curriculum</li>
+                <li>Admission</li>
+                <li>Profile</li>
+            </div>
+            <div class="footer-col">
+                <h3>Facilities</h3>
+                <li>Food and Nutrition</li>
+                <li>Health Service</li>
+                <li>Transportation</li>
+                <li>Safety and Security</li>
+            </div>
+            <div class="footer-col">
+                <h3>Admisnistration</h3>
+                <li>calendar</li>
+                <li>news & Media</li>
+                <li>Staff</li>
+                
+            </div>
+            <div class="footer-col">
+                <!-- <h3><a href="logo.png"></a></h3> -->
+                <h3>Contact US</h3>
+                <li>P.O Box:56412</li>
+                <li>Bardibas 1 Mohattari</li>
+                <li>Tel: 044-550255</li>
+                <li>Email: globalacademy25@yahoo.com</li>
+            </div>
+            <div calss="footer-col">
+                <h3> Newsletter</h3>
+                <p> You can trust us. We inform you in when Admission starts</p>
+                <div class="suscribe">
+                    <input type="text" name="" placeholder="your Email is" id="">
+                    <a href="#" class="yellow">subscribe</a>
+                </div>
+            </div>
+              
+                <div class="pro-links">
+                    <a href="https://www.facebook.com/global.academy2060">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  
+                      
+                    <a href="https://www.instagram.com/sand.eshdhakal/">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    </div>
+                  
+                </div>
+                
+                <br><br>
+                <div class="copyright">
+                  <h4>Copyright © 2021 Global Academy. All Rights Reserved.</h4>
+                  
+                 
+                  
+                  
+              </div>
+            </footer>
+   
+      
+</body>
+</html>
